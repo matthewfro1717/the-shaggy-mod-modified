@@ -302,25 +302,6 @@ class PlayState extends MusicBeatState
 		persistentUpdate = true;
 		persistentDraw = true;
 
-		if (SONG == null)
-			SONG = Song.loadFromJson('tutorial');
-
-		if (SONG.song == 'Talladega' && FlxG.save.data.p_partsGiven < 4)
-		{
-			fullDim = true;
-			isStoryMode = false;
-		}
-		var debCrash = true;
-
-		#if debug
-		debCrash = false;
-		#end
-
-		if (SONG.song == 'BIG-SHOT' && debCrash)
-		{
-			//System.exit(0);
-		}
-
 		mania = SONG.mania;
 
 		Conductor.mapBPMChanges(SONG);
